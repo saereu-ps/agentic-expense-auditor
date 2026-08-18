@@ -35,6 +35,9 @@ def main():
             st.error("Environment variables are not configured. Please contact the administrator.")
             st.stop()
             
+        st.markdown(f"**Your Question:** {query}")
+        st.write("")
+            
         with st.spinner("Reviewing policies..."):
             try:
                 result_state = run_auditor(query)
