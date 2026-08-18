@@ -31,7 +31,7 @@ def main():
     st.write("")
         
     if submitted and query:
-        if not os.getenv("GROQ_API_KEY"):
+        if not (os.getenv("GROQ_API_KEY") or os.getenv("AZURE_OPENAI_API_KEY")):
             st.error("Environment variables are not configured. Please contact the administrator.")
             st.stop()
             
